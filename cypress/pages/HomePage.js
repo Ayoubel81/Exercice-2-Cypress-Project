@@ -1,7 +1,6 @@
 class HomePage {
   visit() {
-    cy.visit("https://www.google.com/");
-    cy.pause();
+    cy.visit("/fr");
   }
 
   verifyHomepage() {
