@@ -1,0 +1,15 @@
+{
+  "sites": [
+    {
+      "keyword": "Lacoste US",
+      "country": "US",
+      "url": "https://www.lacoste.com/us/"
+    },
+    {
+      "keyword": "Lacoste FR",
+      "country": "FR",
+      "url": "https://www.lacoste.com/fr/"
+    }
+  ]
+  
+}
