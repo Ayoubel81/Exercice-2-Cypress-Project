@@ -1,0 +1,136 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2026-10-28T00:42:26.637Z",
+    "end": "2026-10-28T00:42:54.808Z",
+    "duration": 28171,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6d83cce5-d74e-44bd-9caf-20edb32b3e24",
+      "title": "",
+      "fullFile": "cypress\\e2e\\google-search.cy.js",
+      "file": "cypress\\e2e\\google-search.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "26dfe98b-f242-43d1-8b41-27fbebbc60ab",
+          "title": "Google search tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should open Lacoste US from Google",
+              "fullTitle": "Google search tests should open Lacoste US from Google",
+              "timedOut": null,
+              "duration": 14613,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\google-search.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\google-search.cy.js\\\\Google search tests -- should open Lacoste US from Google (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "const site = this.data.sites[0];\nsearchAndVerify(site);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: '/Lacoste/i' within the selector: 'a' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: '/Lacoste/i' within the selector: 'a' but never did.\n    at searchAndVerify (webpack://test-cypress/./cypress/e2e/google-search.cy.js:30:7)\n    at Context.eval (webpack://test-cypress/./cypress/e2e/google-search.cy.js:10:4)",
+                "diff": null
+              },
+              "uuid": "9d8d5e78-c292-4f6d-a3bd-e6d4b16549c5",
+              "parentUUID": "26dfe98b-f242-43d1-8b41-27fbebbc60ab",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should open Lacoste FR from Google",
+              "fullTitle": "Google search tests should open Lacoste FR from Google",
+              "timedOut": null,
+              "duration": 11118,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\google-search.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\google-search.cy.js\\\\Google search tests -- should open Lacoste FR from Google (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "const site = this.data.sites[1];\nsearchAndVerify(site);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: '/Lacoste/i' within the selector: 'a' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: '/Lacoste/i' within the selector: 'a' but never did.\n    at searchAndVerify (webpack://test-cypress/./cypress/e2e/google-search.cy.js:30:7)\n    at Context.eval (webpack://test-cypress/./cypress/e2e/google-search.cy.js:15:4)",
+                "diff": null
+              },
+              "uuid": "3b34b848-8836-4808-bb08-e9e079d03920",
+              "parentUUID": "26dfe98b-f242-43d1-8b41-27fbebbc60ab",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9d8d5e78-c292-4f6d-a3bd-e6d4b16549c5",
+            "3b34b848-8836-4808-bb08-e9e079d03920"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 25731,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "Lacoste FR - Test Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

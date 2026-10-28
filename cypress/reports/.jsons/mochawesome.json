@@ -1,0 +1,247 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-10-28T00:42:23.124Z",
+    "end": "2026-10-28T00:42:23.845Z",
+    "duration": 721,
+    "testsRegistered": 8,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 7,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "4c193f50-0191-4d0a-96b7-64c73a7cae74",
+      "title": "",
+      "fullFile": "cypress\\e2e\\LacosteTest.cy.js",
+      "file": "cypress\\e2e\\LacosteTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7957bda0-feff-494b-872d-7eb536de5cb9",
+          "title": "Lacoste Fr Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should display results for a valid search",
+              "fullTitle": "Lacoste Fr Tests should display results for a valid search",
+              "timedOut": null,
+              "duration": 629,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\LacosteTest.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\LacosteTest.cy.js\\\\Lacoste Fr Tests -- should display results for a valid search -- before each hook (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "homePage.searchProduct(productName);\nsearchPage.verifyResults(productName);",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.lacoste.com/fr\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Lacoste Fr Tests`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.lacoste.com/fr\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Lacoste Fr Tests`\n    at <unknown> (https://www.lacoste.com/__cypress/runner/cypress_runner.js:133149:76)\n    at visitFailedByErr (https://www.lacoste.com/__cypress/runner/cypress_runner.js:132739:12)\n    at <unknown> (https://www.lacoste.com/__cypress/runner/cypress_runner.js:133132:13)\n    at tryCatcher (https://www.lacoste.com/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise._settlePromiseFromHandler (https://www.lacoste.com/__cypress/runner/cypress_runner.js:1492:31)\n    at Promise._settlePromise (https://www.lacoste.com/__cypress/runner/cypress_runner.js:1549:18)\n    at Promise._settlePromise0 (https://www.lacoste.com/__cypress/runner/cypress_runner.js:1594:10)\n    at Promise._settlePromises (https://www.lacoste.com/__cypress/runner/cypress_runner.js:1670:18)\n    at _drainQueueStep (https://www.lacoste.com/__cypress/runner/cypress_runner.js:2380:12)\n    at _drainQueue (https://www.lacoste.com/__cypress/runner/cypress_runner.js:2373:9)\n    at Async._drainQueues (https://www.lacoste.com/__cypress/runner/cypress_runner.js:2389:5)\n    at Async.drainQueues (https://www.lacoste.com/__cypress/runner/cypress_runner.js:2259:14)\nFrom Your Spec Code:\n    at HomePage.visit (webpack://test-cypress/./cypress/pages/HomePage.js:3:7)\n    at Context.eval (webpack://test-cypress/./cypress/e2e/LacosteTest.cy.js:19:13)",
+                "diff": null
+              },
+              "uuid": "20dd3fc7-cfb2-4261-b5a6-273a1d6f478a",
+              "parentUUID": "7957bda0-feff-494b-872d-7eb536de5cb9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display a no-results message",
+              "fullTitle": "Lacoste Fr Tests should display a no-results message",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.searchProduct(\"XYZNONEXISTENT999\");\nsearchPage.verifyNoResults();",
+              "err": {},
+              "uuid": "7d741bba-bb24-49c2-9b84-bbec6c9e43c0",
+              "parentUUID": "7957bda0-feff-494b-872d-7eb536de5cb9",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should open a product category",
+              "fullTitle": "Lacoste Fr Tests should open a product category",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.openCategory(productCategory);\ncy.get(\"body\").should(\"be.visible\");\ncy.url().should(\"include\", productCategory.toLowerCase());",
+              "err": {},
+              "uuid": "de82730c-3d36-49a6-9b25-1e5971af3aed",
+              "parentUUID": "7957bda0-feff-494b-872d-7eb536de5cb9",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should display product details",
+              "fullTitle": "Lacoste Fr Tests should display product details",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.searchProduct(productName);\nsearchPage.openFirstProduct();\nproductPage.verifyProductDetails(productName);",
+              "err": {},
+              "uuid": "da7a8460-6300-43da-a567-a55a1eb729de",
+              "parentUUID": "7957bda0-feff-494b-872d-7eb536de5cb9",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should allow selecting a product size",
+              "fullTitle": "Lacoste Fr Tests should allow selecting a product size",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.searchProduct(productName);\nsearchPage.openFirstProduct();\nproductPage.selectSize(size);",
+              "err": {},
+              "uuid": "02c76821-e025-4b7a-8d69-62c8cfb08243",
+              "parentUUID": "7957bda0-feff-494b-872d-7eb536de5cb9",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should add a product to the cart",
+              "fullTitle": "Lacoste Fr Tests should add a product to the cart",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.searchProduct(productName);\nsearchPage.openFirstProduct();\nproductPage.addToCart();",
+              "err": {},
+              "uuid": "c90ce60a-47a8-4733-9024-032fdc8773be",
+              "parentUUID": "7957bda0-feff-494b-872d-7eb536de5cb9",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should display the selected product in the cart",
+              "fullTitle": "Lacoste Fr Tests should display the selected product in the cart",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.searchProduct(productName);\nsearchPage.openFirstProduct();\nproductPage.addToCart();\ncartPage.openCart();\ncartPage.verifyCartIsVisible(productName, size);",
+              "err": {},
+              "uuid": "6d3e42d0-ce90-4523-9e45-8b209281b511",
+              "parentUUID": "7957bda0-feff-494b-872d-7eb536de5cb9",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should filter and sort products",
+              "fullTitle": "Lacoste Fr Tests should filter and sort products",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.visit();\nhomePage.openCategory(productCategory);\nsearchPage.filterByColor(color);\nsearchPage.sortByPriceAscending();",
+              "err": {},
+              "uuid": "3c2d0a85-2a4c-4c85-b6f9-9e573ad4de01",
+              "parentUUID": "7957bda0-feff-494b-872d-7eb536de5cb9",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "20dd3fc7-cfb2-4261-b5a6-273a1d6f478a"
+          ],
+          "pending": [],
+          "skipped": [
+            "7d741bba-bb24-49c2-9b84-bbec6c9e43c0",
+            "de82730c-3d36-49a6-9b25-1e5971af3aed",
+            "da7a8460-6300-43da-a567-a55a1eb729de",
+            "02c76821-e025-4b7a-8d69-62c8cfb08243",
+            "c90ce60a-47a8-4733-9024-032fdc8773be",
+            "6d3e42d0-ce90-4523-9e45-8b209281b511",
+            "3c2d0a85-2a4c-4c85-b6f9-9e573ad4de01"
+          ],
+          "duration": 629,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "Lacoste FR - Test Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
