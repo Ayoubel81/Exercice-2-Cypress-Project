@@ -76,11 +76,7 @@ Verify cart subtotal and total calculations.
 
 Verify adding multiple products.
 
-Verify the cart persists when navigating between pages.
-
 Verify checkout validation, delivery information, and payment steps, where testable.
-
-Verify responsive behavior on desktop, tablet, and mobile.
 
 Verify error messages and form validation.
 

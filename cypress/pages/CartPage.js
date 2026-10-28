@@ -1,18 +1,17 @@
 class CartPage {
   openCart() {
-    cy.get('a[title="Mon panier"')
+    cy.get('a[title="Mon panier"]')
       .first()
       .click();
   }
-
-  verifyCartContains(productName) {
-    cy.get("body").should("contain.text", productName);
-  }
+  
 
   verifyCartIsVisible(productName,size) {
     cy.get("body").should("be.visible");
-    cy.xpath("//button[contains(text(),'"+productName+"')]");
-    cy.xpath("//p[contains(text(),'"+size+"')]");;
+    cy.xpath(`//button[contains(., "${productName}")]`)
+      .should("be.visible");
+    cy.xpath(`//p[contains(., "${size}")]`)
+      .should("be.visible");
   }
 }
 

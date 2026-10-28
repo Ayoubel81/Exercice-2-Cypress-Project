@@ -3,6 +3,7 @@ class HomePage {
     cy.visit("/fr");
   }
 
+
   verifyHomepage() {
     cy.url().should("include", "/fr");
     cy.get("body").should("be.visible");
@@ -16,7 +17,9 @@ class HomePage {
   }
 
   openCategory(categoryName) {
-    cy.xpath("//span[contains(text(),'"+categoryName+"')]").click();
+    cy.xpath(`//span[contains(text(),'${categoryName}')]`)
+      .should("be.visible")
+      .click();
     cy.contains("a", new RegExp(`^toutes les ${categoryName} homme$`, "i"))
       .should("be.visible")
       .click();

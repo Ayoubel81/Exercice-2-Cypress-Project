@@ -23,8 +23,6 @@ describe('Google search tests', () => {
       .type(`${site.keyword}{enter}`);
 
 
-    cy.pause();
-
 
     cy.contains('a', /Lacoste/i)
       .should('be.visible')
