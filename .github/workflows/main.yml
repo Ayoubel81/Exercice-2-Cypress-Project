@@ -16,7 +16,6 @@ jobs:
         if: always()
         with:
           path: |
-            cypress/reports/
             cypress/screenshots/
             cypress/videos/
           if-no-files-found: warn

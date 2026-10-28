@@ -25,7 +25,7 @@ TC01 | Search for a valid product                   | Verify search results for 
 TC02 | Search for a nonexistent product             | Verify the no-results message
 TC03 | Open a product category                      | Check page visibility and category URL
 TC04 | Display product details                      | Verify product details after opening a product
-TC05 | Search for a valid product                   | Execute size selection for size M
+TC05 | Select a product size                        | Execute size selection for size M
 TC06 | Add a product to the cart                    | Execute the add-to-cart action
 TC07 | Verify the cart contents                     | Verify the cart contains the expected product and size
 TC08 | Filter products by color                     | Execute the color filter for black products
@@ -66,8 +66,6 @@ Verify that unavailable sizes cannot be selected.
 
 Verify size selection is required when applicable.
 
-Verify product image gallery behavior.
-
 Shopping cart and checkout
 
 Verify updating product quantities.
@@ -82,14 +80,85 @@ Verify the cart persists when navigating between pages.
 
 Verify checkout validation, delivery information, and payment steps, where testable.
 
-Additional quality checks
-
 Verify responsive behavior on desktop, tablet, and mobile.
-
-Verify accessibility basics, including keyboard navigation, labels, and image alternative text.
 
 Verify error messages and form validation.
 
-Verify performance and browser compatibility.
 
-Verify analytics events for important customer journeys, if required.
+
+
+5. Prerequisites
+
+Before running the project, install:
+
+Node.js (a version supported by the installed Cypress release).
+npm.
+
+6. Installation
+
+Install dependencies:
+
+npm install
+
+If the Cypress browser binary is not installed, run:
+
+npx cypress install
+
+
+
+7. Running the Tests
+
+Open Cypress Test Runner
+
+npx cypress open
+
+Select E2E Testing, choose a browser, and run the desired test file.
+---------------------------------------------------------
+Run tests in headless mode
+
+npx cypress run
+---------------------------------------------------------
+To run a specific test file:
+
+npx cypress run --spec "cypress/e2e/lacoste.cy.js"
+
+---------------------------------------------------------
+Reports, screenshots, and videos
+
+The available Cypress configuration can enable screenshots on test failures and video recording.
+
+For example:
+
+npx cypress run --config video=true,screenshotOnRunFailure=true
+
+
+
+8. CI/CD Pipeline – GitHub Actions
+
+The project uses GitHub Actions to automatically execute Cypress tests when code is pushed to the main branch.
+
+The workflow is configured in:
+
+.github/workflows/cypress.yml
+
+Pipeline steps
+
+Checkout repository: Downloads the project source code.
+
+Run Cypress tests: Executes the automated end-to-end tests on an Ubuntu runner.
+
+Generate test evidence: Enables video recording and screenshots on test failures.
+
+Upload artifacts: Saves available screenshots and videos for later review, even if the tests fail.
+
+View pipeline results
+
+    1) Open the project repository on GitHub.
+
+    2) Navigate to the Actions tab.
+
+    3) Select the latest workflow run.
+
+    4) Review the test execution status and logs.
+
+    5) Download the cypress-test-results artifact if it was generated.
