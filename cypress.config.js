@@ -9,13 +9,5 @@ module.exports = defineConfig({
     defaultCommandTimeout: 10000,
     video: true,
     screenshotOnRunFailure: true,
-    reporter: "cypress-mochawesome-reporter",
-    reporterOptions: {
-    reportDir: "cypress/reports",
-    charts: true,
-    reportPageTitle: "Lacoste FR - Test Report",
-    embeddedScreenshots: true,
-    inlineAssets: true
-    }
   },
 });
