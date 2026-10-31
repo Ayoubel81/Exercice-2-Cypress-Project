@@ -16,10 +16,30 @@ describe("Lacoste Fr Tests", () => {
 
   beforeEach(() => {
     cy.fixture('lacosteData').as('data');
+    cy.fixture('users').as('users');
     homePage.visit();
   });
 
+  it("test 2 users as", function () {
 
+      cy.get("input[placeholder='Username']").type(this.users.firstUser[0].username);
+      cy.get("input[placeholder='Password']").type(this.users.firstUser[0].password);
+      cy.get("button[type='submit']").click();
+  });
+
+
+  it("test users as", () => {
+    cy.get("@users").then((users) => {
+      cy.get("input[placeholder='Username']").type(users.firstUser[0].username);
+      cy.get("input[placeholder='Password']").type(users.firstUser[0].password);
+      cy.get("button[type='submit']").click();
+    })
+  });
+
+
+  it("test", () => {
+    homePage.test();
+  });
 
   it("should display results for a valid search", () => {
     homePage.searchProduct(productName);
