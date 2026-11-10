@@ -97,7 +97,7 @@ describe("Lacoste Fr Tests", () => {
 
 
 
-  it.only("should filter and sort products", () => {
+  it("should filter and sort products", () => {
     homePage.openCategory(productCategory);
 
     searchPage.filterByColor(color);
