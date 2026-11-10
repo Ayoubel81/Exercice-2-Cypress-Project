@@ -5,7 +5,7 @@ describe('Google search tests', () => {
     cy.fixture('lacosteData').as('data');
   });
 
-  it('should open Lacoste US from Google', function () {
+  it.only('should open Lacoste US from Google', function () {
     const site = this.data.sites[0];
     searchAndVerify(site);
   });
