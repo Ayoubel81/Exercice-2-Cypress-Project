@@ -1,6 +1,8 @@
 class ProductPage {
   verifyProductDetails(product) {
+    cy.debug();
     cy.get("h1")
+      .first()
       .should("be.visible")
       .and("contain.text", product);
     cy.get("body").should("contain.text", "€");
@@ -25,6 +27,7 @@ class ProductPage {
     cy.contains("button", /ajouter au panier/i)
       .should("be.visible")
       .click();
+    cy.get('.flex-mt--col > .js-add-to-cart').click();  
     cy.get("h2[id='dialog_title']")
       .should("be.visible")
       .and("contain.text", "L’article a été ajouté à votre panier");

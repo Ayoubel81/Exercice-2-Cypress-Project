@@ -1,6 +1,6 @@
 class CartPage {
   openCart() {
-    cy.get('a[title="Mon panier"]')
+    cy.get('.flex--centered > .btn--conversion')
       .first()
       .click();
   }

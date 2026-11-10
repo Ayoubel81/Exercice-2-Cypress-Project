@@ -13,7 +13,7 @@ class SearchResultsPage {
   }
   
   openFirstProduct() {
-    cy.xpath('//div[contains(@class,"product-tile-image-hover")]')
+    cy.get('div[class="plp-tile l-fill-width "]')
       .first()
       .click();
   }
@@ -22,7 +22,7 @@ class SearchResultsPage {
     cy.xpath(`//label[contains(@aria-label,'${color}')]`)
       .should("be.visible")
       .click();
-    cy.contains("button[data-filter-id='searchColorID']").should("be.visible");
+    cy.get("button[data-filter-id='searchColorID']").should("be.visible");
     cy.xpath("//button[@data-filter-id='searchColorID']//span").should("contain.text", "Couleur (1)");
   }
 

@@ -9,7 +9,7 @@ describe("Lacoste Fr Tests", () => {
   const productPage = new ProductPage();
   const cartPage = new CartPage();
 
-  const productName = "polo";
+  const productName = "Polo";
   const productCategory = "Chaussures";
   const size = "M";
   const color = "Noir";
@@ -20,26 +20,27 @@ describe("Lacoste Fr Tests", () => {
     homePage.visit();
   });
 
-  it("test 2 users as", function () {
+  it('Check website access', () => {
+    cy.request({
+      url: 'https://www.lacoste.com/fr',
+      failOnStatusCode: false,
+      followRedirect: true
+    }).then((response) => {
+      cy.log(`Status: ${response.status}`);
+      cy.log(`Final URL: ${response.redirectedToUrl || 'N/A'}`);
+      cy.log(`Content-Type: ${response.headers['content-type']}`);
+    });
 
-      cy.get("input[placeholder='Username']").type(this.users.firstUser[0].username);
-      cy.get("input[placeholder='Password']").type(this.users.firstUser[0].password);
-      cy.get("button[type='submit']").click();
+    cy.window().then((win) => {
+      console.log({
+        userAgent: win.navigator.userAgent,
+        platform: win.navigator.platform,
+        language: win.navigator.language,
+        webdriver: win.navigator.webdriver
+      });
+    });
   });
 
-
-  it("test users as", () => {
-    cy.get("@users").then((users) => {
-      cy.get("input[placeholder='Username']").type(users.firstUser[0].username);
-      cy.get("input[placeholder='Password']").type(users.firstUser[0].password);
-      cy.get("button[type='submit']").click();
-    })
-  });
-
-
-  it("test", () => {
-    homePage.test();
-  });
 
   it("should display results for a valid search", () => {
     homePage.searchProduct(productName);
@@ -79,7 +80,7 @@ describe("Lacoste Fr Tests", () => {
   it("should add a product to the cart", () => {
     homePage.searchProduct(productName);
     searchPage.openFirstProduct();
-
+    productPage.selectSize(size);
     productPage.addToCart();
   });
 
@@ -88,7 +89,7 @@ describe("Lacoste Fr Tests", () => {
   it("should display the selected product in the cart", () => {
     homePage.searchProduct(productName);
     searchPage.openFirstProduct();
-
+    productPage.selectSize(size);
     productPage.addToCart();
     cartPage.openCart();
     cartPage.verifyCartIsVisible(productName, size);
@@ -96,8 +97,7 @@ describe("Lacoste Fr Tests", () => {
 
 
 
-  it("should filter and sort products", () => {
-    homePage.visit();
+  it.only("should filter and sort products", () => {
     homePage.openCategory(productCategory);
 
     searchPage.filterByColor(color);
