@@ -18,5 +18,8 @@ module.exports = defineConfig({
 
     video: true,
     screenshotOnRunFailure: true
+  },
+  env: {
+    apiUrl: "https://api.exchangeratesapi.io"
   }
 });
