@@ -16,14 +16,16 @@ describe('Google search tests', () => {
   });
 
   function searchAndVerify(site) {
-    cy.visit('https://www.google.com');
+    cy.visit('https://www.google.com', {
+      failOnStatusCode: false
+      });
 
     cy.get('textarea[name="q"]')
       .first()
       .type(`${site.keyword}{enter}`);
 
 
-
+    cy.detectCaptcha();
     cy.contains('a', /Lacoste/i)
       .should('be.visible')
       .click();

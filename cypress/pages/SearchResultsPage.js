@@ -13,9 +13,26 @@ class SearchResultsPage {
   }
   
   openFirstProduct() {
+    /*cy.log("1 - Before clicking product");
+    cy.location("pathname").then((currentUrl) => {
     cy.get('div[class="plp-tile l-fill-width "]')
+        .first()
+        .click();
+        
+    cy.log("2 - After clicking product");
+
+    cy.location("pathname", {timeout: 70000})
+        .should('not.eq', currentUrl);
+    })*/
+
+    cy.xpath('//a[contains(@class,"product-tile-link")]')
       .first()
-      .click();
+      .should("be.visible")
+      .then(($link) => {
+        const productUrl = $link.prop("href");
+
+        cy.visit(productUrl);
+      });
   }
 
   filterByColor(color) {

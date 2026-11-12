@@ -1,6 +1,5 @@
 class ProductPage {
   verifyProductDetails(product) {
-    cy.debug();
     cy.get("h1")
       .first()
       .should("be.visible")

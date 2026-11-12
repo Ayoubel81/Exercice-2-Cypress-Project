@@ -99,7 +99,6 @@ describe("Lacoste Fr Tests", () => {
 
   it("should filter and sort products", () => {
     homePage.openCategory(productCategory);
-
     searchPage.filterByColor(color);
     searchPage.sortByPriceAscending();
   });

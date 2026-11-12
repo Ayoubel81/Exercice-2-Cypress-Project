@@ -2,7 +2,7 @@ name: lacoste-project
 
 on:
   push:
-    branches: ["main"]
+    branches: ["feature/amelioration-tests"]
 
 jobs:
   cypress:

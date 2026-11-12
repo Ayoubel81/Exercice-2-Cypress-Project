@@ -53,3 +53,20 @@ Cypress.Commands.add('openLacoste', () => {
 
 
 });
+
+
+Cypress.Commands.add('detectCaptcha', () => {
+  cy.get('body').then(($body) => {
+    const captcha = $body.find(
+      'iframe[src*="recaptcha"], .g-recaptcha'
+    ).length > 0;
+
+    if (captcha) {
+      cy.screenshot('google-captcha-detected');
+
+      throw new Error(
+        'Test bloqué : Google CAPTCHA détecté'
+      );
+    }
+  });
+});
